@@ -1,0 +1,7 @@
+ <script src = "/js/main.js" async defer></script>
+ <% if (pageScripts) { %> <% pageScripts.forEach(script => { %>
+        <script src="<%= script %>" async defer></script>
+        <% }) %> <% } %>
+    </body>
+</html>
+
