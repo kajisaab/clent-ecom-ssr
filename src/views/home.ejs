@@ -2,7 +2,9 @@
     pageStyles: pageStyles , pageTitle: title 
 }) %>
 
-<%- include('./components/navbar.ejs') %>
+<%- include('./components/navbar.ejs', { 
+    menuDetails: menuDetails
+}) %>
     
     <section>
         <div class='carousel__banner'>

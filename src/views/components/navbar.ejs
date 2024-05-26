@@ -69,38 +69,51 @@
                                             <div class="menu__modal">
                                                 <div id = 'main__menu__tab' class="nav__menu__dropdown">
                                                     <ul class="menu__root" data-spm="cate">
-                                                        <li class="menu__root__item" id = 'Level_1_Category_No1'>
-                                                            <a id = 'main__menu' class='main__menu Level_1_Category_No1'>
-                                                                <span class="material-symbols-outlined icon__holder">styler</span>
-                                                                <span class='txt__holder'>Women's Fashion</span>
-                                                            </a>
-                                                        </li>
-                                                        <div class="menu__root__item" id = 'Level_1_Category_No2'>Health & Beauty</div>
-                                                        <li class="menu__root__item" id = 'Level_1_Category_No9'>Men's Fashion</li>
+                                                        <% if(menuDetails.mainMenu && menuDetails.mainMenu.length > 0) { %>
+                                                            <% menuDetails.mainMenu.forEach(function(item) { %>
+                                                                <li class="menu__root__item" id = 'Level_<%= item.index %>_Category_No<%= item.index %>'>
+                                                                    <a id = 'main__menu' class='main__menu Level_<%= item.index %>_Category_No<%= item.index %>'>
+                                                                        <span class="material-symbols-outlined icon__holder"><%= item.icon %></span>
+                                                                        <span class='txt__holder'><%= item.title %></span>
+                                                                    </a>
+                                                                </li>
+                                                            <% }) %>
+                                                        <% } %>
+                                                        
+                                                        <% if(menuDetails.subMenu && menuDetails.subMenu.length > 0) { %>
+                                                            <% menuDetails.subMenu.forEach(function(item, index) { %>
+                                                                <ul class='site-menu-sub Level_<%= item.index %>_Category_No<%= item.index %>' data-spm='cate1'>
+                                                                    <li class="site__menu__sub__item" data-cate='cate_1_1'>
+                                                                        <a href = '<%= item.url %>'>
+                                                                            <span><%= item.title %></span>
+                                                                            <% if(item.subMenuItem && item.subMenuItem.length > 0) { %>
+                                                                                <span class="material-symbols-outlined sub__menu__arrow">chevron_right</span>
+                                                                            <% } %>
 
-                                                        <ul class='site-menu-sub Level_1_Category_No1' data-spm='cate1'>
-                                                            <li class="site__menu__sub__item" data-cate='cate_1_1'>
-                                                                <a href = ''>
-                                                                    <span>Clothing</span>
-                                                                </a>
-                                                                <ul class="site__menu__grand" data-spm='cate_1_1'>
-                                                                    <li id = 'site__menu__third__layer__heading' class="sub__heading">
-                                                                        <a href = ''>
-                                                                            <span> Sunglasses</span>
                                                                         </a>
+                                                                        <ul class="site__menu__grand" data-spm='cate_1_1'>
+                                                                            <li id = 'site__menu__third__layer__heading' class="sub__heading">
+                                                                                <a href = ''>
+                                                                                    <span> <%= item.subMenuItemTitle %></span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <ul class="inner__container">
+                                                                                <% if(item.subMenuItem && item.subMenuItem.length > 0 ) { %>
+                                                                                    <% item.subMenuItem.forEach(function (subItem, index) { %>
+                                                                                        <li class="site__menu__grand__item">
+                                                                                            <a href = "<%= subItem.url %>" class='catLink'>
+                                                                                                <img src = "<%= subItem.img %>" class='catCircleImg'>
+                                                                                                <span><%= subItem.title %></span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    <% }) %>
+                                                                                <% } %>
+                                                                            </ul>
+                                                                        </ul>
                                                                     </li>
-                                                                    <ul class="inner__container">
-                                                                        <li class="site__menu__grand__item">
-                                                                            <a href = '' class='catLink'>
-                                                                                <img src = '' class='catCircleImg'>
-                                                                                <span>Men Sunglasses</span>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
                                                                 </ul>
-                                                            </li>
-                                                        </ul>
-                                                        <ul class='site-menu-sub Level_1_Category_No2' data-spm='cate2'>Accessories</ul>
+                                                            <% }) %>
+                                                        <% } %>
                                                     </ul>
                                                 </div>
                                             </div>

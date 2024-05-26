@@ -9,9 +9,33 @@ homeRouter.get('', async (req, res) => {
         menuDetails: {
             mainMenu: [
                 {
+                    index: 1,
                     name: 'womenFashion',
                     title: "Women's Fashion",
                     icon: 'styler',
+                },
+                {
+                    index: 2,
+                    name: 'mensFashion',
+                    title: "Men's Fashion",
+                    icon: 'apparel',
+                },
+            ],
+            subMenu: [
+                {
+                    index: 1,
+                    name: 'cloting',
+                    title: 'Clothing',
+                    url: '',
+                    subMenuItemTitle: 'Sunglasses',
+                    subMenuItem: [
+                        {
+                            name: 'mensunglasses',
+                            title: 'Men Sunglasses',
+                            img: '',
+                            url: '',
+                        },
+                    ],
                 },
             ],
         },
