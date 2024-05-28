@@ -77,40 +77,40 @@
                                                                         <span class='txt__holder'><%= item.title %></span>
                                                                     </a>
                                                                 </li>
-                                                            <% }) %>
-                                                        <% } %>
-                                                        
-                                                        <% if(menuDetails.subMenu && menuDetails.subMenu.length > 0) { %>
-                                                            <% menuDetails.subMenu.forEach(function(item, index) { %>
+                                                                
                                                                 <ul class='site-menu-sub Level_<%= item.index %>_Category_No<%= item.index %>' data-spm='cate1'>
-                                                                    <li class="site__menu__sub__item" data-cate='cate_1_1'>
-                                                                        <a href = '<%= item.url %>'>
-                                                                            <span><%= item.title %></span>
-                                                                            <% if(item.subMenuItem && item.subMenuItem.length > 0) { %>
-                                                                                <span class="material-symbols-outlined sub__menu__arrow">chevron_right</span>
-                                                                            <% } %>
+                                                                    <% if(item.subMenu && item.subMenu.length > 0) { %>
+                                                                        <% item.subMenu.forEach(function(subitem, index) { %>
+                                                                                <li class="site__menu__sub__item" data-cate='cate_1_1'>
+                                                                                    <a href = '<%= subitem.url %>'>
+                                                                                        <span><%= subitem.title %></span>
+                                                                                        <% if(subitem.subMenuItem && subitem.subMenuItem.length > 0) { %>
+                                                                                            <span class="material-symbols-outlined sub__menu__arrow">chevron_right</span>
+                                                                                        <% } %>
 
-                                                                        </a>
-                                                                        <ul class="site__menu__grand" data-spm='cate_1_1'>
-                                                                            <li id = 'site__menu__third__layer__heading' class="sub__heading">
-                                                                                <a href = ''>
-                                                                                    <span> <%= item.subMenuItemTitle %></span>
-                                                                                </a>
-                                                                            </li>
-                                                                            <ul class="inner__container">
-                                                                                <% if(item.subMenuItem && item.subMenuItem.length > 0 ) { %>
-                                                                                    <% item.subMenuItem.forEach(function (subItem, index) { %>
-                                                                                        <li class="site__menu__grand__item">
-                                                                                            <a href = "<%= subItem.url %>" class='catLink'>
-                                                                                                <img src = "<%= subItem.img %>" class='catCircleImg'>
-                                                                                                <span><%= subItem.title %></span>
+                                                                                    </a>
+                                                                                    <ul class="site__menu__grand" data-spm='cate_1_1'>
+                                                                                        <li id = 'site__menu__third__layer__heading' class="sub__heading">
+                                                                                            <a href = ''>
+                                                                                                <span> <%= subitem.subMenuItemTitle %></span>
                                                                                             </a>
                                                                                         </li>
-                                                                                    <% }) %>
-                                                                                <% } %>
-                                                                            </ul>
-                                                                        </ul>
-                                                                    </li>
+                                                                                        <ul class="inner__container">
+                                                                                            <% if(subitem.subMenuItem && subitem.subMenuItem.length > 0 ) { %>
+                                                                                                <% subitem.subMenuItem.forEach(function (subsubItem, index) { %>
+                                                                                                    <li class="site__menu__grand__item">
+                                                                                                        <a href = "<%= subsubItem.url %>" class='catLink'>
+                                                                                                            <img src = "<%= subsubItem.img %>" class='catCircleImg'>
+                                                                                                            <span><%= subsubItem.title %></span>
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                <% }) %>
+                                                                                            <% } %>
+                                                                                        </ul>
+                                                                                    </ul>
+                                                                                </li>
+                                                                        <% }) %>
+                                                                    <% } %>
                                                                 </ul>
                                                             <% }) %>
                                                         <% } %>
