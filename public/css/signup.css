@@ -1,0 +1,87 @@
+.signup__container__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input__container {
+    position: relative;
+    width: 100%;
+}
+
+.left__container {
+    width: 380px;
+    float: left;
+}
+
+.input__container label {
+    font-size: 12px;
+    height: 15px;
+    line-height: 15px;
+    overflow: hidden;
+    color: #424242;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input__container label::after {
+    content: '*';
+    padding-left: 3px;
+}
+
+#textInput,
+#passwordTextInput {
+    height: 40px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 30px;
+    width: 100%;
+    padding: 0 35px 0 10px;
+    margin-bottom: 2px;
+    outline: none;
+    border: 1px solid #ddd;
+}
+
+
+.input__field::placeholder {
+    font-size: 13px;
+}
+
+#clearButton {
+    display: none;
+    position: absolute;
+    right: 7px;
+    top: 40px;
+    font-size: 18px;
+    line-height: 6px;
+    padding: 7px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: #dadada;
+    border-radius: 50%;
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
+.errorMessage {
+    min-height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    color: #f44336;
+    visibility: hidden;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#visibilityIcon {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    font-size: 24px;
+    line-height: 6px;
+    padding: 7px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 50%;
+}

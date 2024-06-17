@@ -1,11 +1,5 @@
 .carousel__banner {
-    width: 1188px;
-    margin: 0 auto;
+    width: 100%;
     position: relative;
     display: flex;
-}
-
-section {
-    display: block;
-    unicode-bidi: isolate;
 }

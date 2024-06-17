@@ -1,5 +1,7 @@
 const menuNavCategory = document.getElementById('menu_nav_category');
 const mainMenuTab = document.getElementById('main__menu__tab');
+
+console.log({ valueFromRoute });
 // Check if the element exists
 if (menuNavCategory) {
     // Add mouseover event listener to the element
@@ -40,9 +42,7 @@ if (menuNavCategory) {
 document.querySelectorAll('.menu__root__item').forEach((element) => {
     element.addEventListener('mouseover', (event) => {
         let id = event.currentTarget.id;
-        let correspondingSubMenu = document.querySelector(
-            `.site-menu-sub.${id}`,
-        );
+        let correspondingSubMenu = document.querySelector(`.site-menu-sub.${id}`);
         if (correspondingSubMenu) {
             correspondingSubMenu.classList.add('site__menu__sub__active');
         }
@@ -53,16 +53,12 @@ document.querySelectorAll('.menu__root__item').forEach((element) => {
 
     element.addEventListener('mouseout', (event) => {
         let id = event.currentTarget.id;
-        let correspondingSubMenu = document.querySelector(
-            `.site-menu-sub.${id}`,
-        );
+        let correspondingSubMenu = document.querySelector(`.site-menu-sub.${id}`);
         if (correspondingSubMenu) {
             correspondingSubMenu.classList.remove('site__menu__sub__active');
         }
 
-        let correspondingMenu = document.querySelector(
-            `.main__menu.${id}.hover-effect`,
-        );
+        let correspondingMenu = document.querySelector(`.main__menu.${id}.hover-effect`);
         const mainMenu = document.getElementById(id);
 
         mainMenu.classList.remove('main__menu__active');
@@ -82,12 +78,7 @@ document.querySelectorAll('.site-menu-sub').forEach((subMenu) => {
     });
 
     subMenu.addEventListener('mouseleave', (event) => {
-        if (
-            !event.currentTarget.matches(':hover') &&
-            !document
-                .querySelector(`#${event.currentTarget.classList[1]}`)
-                .matches(':hover')
-        ) {
+        if (!event.currentTarget.matches(':hover') && !document.querySelector(`#${event.currentTarget.classList[1]}`).matches(':hover')) {
             const id = event.currentTarget.classList[1];
             const mainMenu = document.getElementById(id);
             mainMenu.classList.remove('main__menu__active');

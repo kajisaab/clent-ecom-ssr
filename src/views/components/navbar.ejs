@@ -1,130 +1,118 @@
-<div class='nav__container'>
-    <div class='nav__wrapper'>
-        <div class='header__container'>
-            <div class="navbar__wrapper">
-                <div class='header__content'>
-                    <div class="links__bar">
-                        <div class="navbar__link__list">
-                            <a href="/payment-and-recharge" class="navbar__link">
-                                Payment & Recharge
-                            </a>
-                            <a href="/support" class="navbar__link">
-                                Help & Support
-                            </a>
-                        </div>
-                    </div>
-                    <div class="logo__bar">
-                        <div class='logo__bar__content header__content'>
-                            <div class='logo__content'>
-                                <a href="/">
-                                    <img
-                                        src="/img/e6ac6883-1158-4663-bda4-df5a1aa066e5.png"
-                                        alt="daraz"
-                                        class="navbar__logo"
-                                    />
-                                </a>
-                            </div>
-                            <div class='nav__search reduceWidthOfSearchBar'>
-                                <form action="/" method="POST" >
-                                    <div class="search__box__bar">
-                                        <input
-                                            id="search__box__input"
-                                            class="search__box__input"
-                                            type="text"
-                                            name="search"
-                                            placeholder="Search in Daraz"
-                                        />
-                                        <input type="submit" class="search__box__button" value="Search" />
-                                    </div>
-                                </form>
-                            </div>
-                            <div class='login__controller__container'>
-                                <div class='before__login'>
-                                    <span class='user__menu'>
-                                        <i class='bx bx-user'></i>
-                                        <span>Login</span>
-                                    </span>
-
-                                    <li class='splitter'>|</li>
-                                    <li class='user__menu'>
-                                        Signup
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu__overflow__wrapper">
-                    <div class="menu__overflow__container">
-                        <div class='inner__page__category'>
-                            <div class="module">
-                                <div id = 'menu' class="menu">
-                                    <div class='menu__nav__container'>
-                                        <div id = 'menu_nav_category' class="menu__nav__category">
-                                            <a href="/" id = 'menu__nav__category__label' class="menu__nav__category__label">
-                                                <span class="menu__nav__category__text">Category</span>
-                                            </a>
-                                        </div>
-                                        <div class='menu__nav__menu'>
-                                            <div class="menu__modal">
-                                                <div id = 'main__menu__tab' class="nav__menu__dropdown">
-                                                    <ul class="menu__root" data-spm="cate">
-                                                        <% if(menuDetails.mainMenu && menuDetails.mainMenu.length > 0) { %>
-                                                            <% menuDetails.mainMenu.forEach(function(item) { %>
-                                                                <li class="menu__root__item" id = 'Level_<%= item.index %>_Category_No<%= item.index %>'>
-                                                                    <a id = 'main__menu' class='main__menu Level_<%= item.index %>_Category_No<%= item.index %>'>
-                                                                        <span class="material-symbols-outlined icon__holder"><%= item.icon %></span>
-                                                                        <span class='txt__holder'><%= item.title %></span>
-                                                                    </a>
-                                                                </li>
-                                                                
-                                                                <ul class='site-menu-sub Level_<%= item.index %>_Category_No<%= item.index %>' data-spm='cate1'>
-                                                                    <% if(item.subMenu && item.subMenu.length > 0) { %>
-                                                                        <% item.subMenu.forEach(function(subitem, index) { %>
-                                                                                <li class="site__menu__sub__item" data-cate='cate_1_1'>
-                                                                                    <a href = '<%= subitem.url %>'>
-                                                                                        <span><%= subitem.title %></span>
-                                                                                        <% if(subitem.subMenuItem && subitem.subMenuItem.length > 0) { %>
-                                                                                            <span class="material-symbols-outlined sub__menu__arrow">chevron_right</span>
-                                                                                        <% } %>
-
-                                                                                    </a>
-                                                                                    <ul class="site__menu__grand" data-spm='cate_1_1'>
-                                                                                        <li id = 'site__menu__third__layer__heading' class="sub__heading">
-                                                                                            <a href = ''>
-                                                                                                <span> <%= subitem.subMenuItemTitle %></span>
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <ul class="inner__container">
-                                                                                            <% if(subitem.subMenuItem && subitem.subMenuItem.length > 0 ) { %>
-                                                                                                <% subitem.subMenuItem.forEach(function (subsubItem, index) { %>
-                                                                                                    <li class="site__menu__grand__item">
-                                                                                                        <a href = "<%= subsubItem.url %>" class='catLink'>
-                                                                                                            <img src = "<%= subsubItem.img %>" class='catCircleImg'>
-                                                                                                            <span><%= subsubItem.title %></span>
-                                                                                                        </a>
-                                                                                                    </li>
-                                                                                                <% }) %>
-                                                                                            <% } %>
-                                                                                        </ul>
-                                                                                    </ul>
-                                                                                </li>
-                                                                        <% }) %>
-                                                                    <% } %>
-                                                                </ul>
-                                                            <% }) %>
-                                                        <% } %>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="nav__container">
+  <div class="nav__wrapper">
+    <div class="header__container">
+      <div class="navbar__wrapper">
+        <div class="header__content">
+          <div class="links__bar">
+            <div class="navbar__link__list">
+              <a href="/payment-and-recharge" class="navbar__link"> Payment & Recharge </a>
+              <a href="/support" class="navbar__link"> Help & Support </a>
             </div>
+          </div>
+          <div class="logo__bar">
+            <div class="logo__bar__content header__content">
+              <div class="logo__content">
+                <a href="/">
+                  <img src="/img/e6ac6883-1158-4663-bda4-df5a1aa066e5.png" alt="daraz" class="navbar__logo" />
+                </a>
+              </div>
+              <div class="nav__search reduceWidthOfSearchBar">
+                <form action="/" method="POST">
+                  <div class="search__box__bar">
+                    <input id="search__box__input" class="search__box__input" type="text" name="search" placeholder="Search in Daraz" />
+                    <input type="submit" class="search__box__button" value="Search" />
+                  </div>
+                </form>
+              </div>
+              <div class="login__controller__container">
+                <div class="before__login">
+                  <span class="user__menu">
+                    <i class="bx bx-user"></i>
+                    <span>Login</span>
+                  </span>
+
+                  <li class="splitter">|</li>
+
+                  <li class="user__menu">
+                    <a href="/signup" class="auth__link"> Signup </a>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="menu__overflow__wrapper">
+          <div class="menu__overflow__container">
+            <div class="inner__page__category">
+              <div class="module">
+                <div id="menu" class="menu">
+                  <div class="menu__nav__container">
+                    <% if(Object.keys(menuDetails).length === 0) { %>
+                    <div class="menu__nav__category">
+                      <a href="/" id="menu__nav__category__label" class="menu__nav__category__label">
+                        <span class="menu__nav__category__text">Category</span>
+                      </a>
+                    </div>
+                    <% } else { %>
+                    <div id="menu_nav_category" class="menu__nav__category">
+                      <a href="/" id="menu__nav__category__label" class="menu__nav__category__label">
+                        <span class="menu__nav__category__text">Category</span>
+                      </a>
+                    </div>
+                    <% } %>
+                    <div class="menu__nav__menu">
+                      <div class="menu__modal">
+                        <div id="main__menu__tab" class="nav__menu__dropdown">
+                          <ul class="menu__root" data-spm="cate">
+                            <% if(menuDetails.mainMenu && menuDetails.mainMenu.length > 0) { %> <% menuDetails.mainMenu.forEach(function(item) { %>
+                            <li class="menu__root__item" id="Level_<%= item.index %>_Category_No<%= item.index %>">
+                              <a id="main__menu" class="main__menu Level_<%= item.index %>_Category_No<%= item.index %>">
+                                <span class="material-symbols-outlined icon__holder"><%= item.icon %></span>
+                                <span class="txt__holder"><%= item.title %></span>
+                              </a>
+                            </li>
+
+                            <ul class="site-menu-sub Level_<%= item.index %>_Category_No<%= item.index %>" data-spm="cate1">
+                              <% if(item.subMenu && item.subMenu.length > 0) { %> <% item.subMenu.forEach(function(subitem, index) { %>
+                              <li class="site__menu__sub__item" data-cate="cate_1_1">
+                                <a href="<%= subitem.url %>">
+                                  <span><%= subitem.title %></span>
+                                  <% if(subitem.subMenuItem && subitem.subMenuItem.length > 0) { %>
+                                  <span class="material-symbols-outlined sub__menu__arrow">chevron_right</span>
+                                  <% } %>
+                                </a>
+                                <ul class="site__menu__grand" data-spm="cate_1_1">
+                                  <li id="site__menu__third__layer__heading" class="sub__heading">
+                                    <a href="">
+                                      <span> <%= subitem.subMenuItemTitle %></span>
+                                    </a>
+                                  </li>
+                                  <ul class="inner__container">
+                                    <% if(subitem.subMenuItem && subitem.subMenuItem.length > 0 ) { %> <% subitem.subMenuItem.forEach(function (subsubItem, index) { %>
+                                    <li class="site__menu__grand__item">
+                                      <a href="<%= subsubItem.url %>" class="catLink">
+                                        <img src="<%= subsubItem.img %>" class="catCircleImg" />
+                                        <span><%= subsubItem.title %></span>
+                                      </a>
+                                    </li>
+                                    <% }) %> <% } %>
+                                  </ul>
+                                </ul>
+                              </li>
+                              <% }) %> <% } %>
+                            </ul>
+                            <% }) %> <% } %>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

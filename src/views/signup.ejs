@@ -1,0 +1,39 @@
+<%- include('./layout/header',{ pageStyles: pageStyles, pageTitle: title }) %> <%- include('./components/navbar.ejs', { menuDetails: {} }) %>
+
+<section>
+  <div class="signup__container__wrapper">
+    <div>
+      <span> Create your Daraz Account</span>
+      <span>Already member? <a href="/login">Login</a> here.</span>
+    </div>
+
+    <form action='' method='POST' class="signup__container">
+      <div class="left__container">
+        <div class="input__container">
+          <label>Phone Number</label>
+          <input name='phoneNumber' type='text' autocomplete='off' class='input__field' id="textInput" oninput='toggleClearButton()' inputmode="numeric" pattern="[0-9]*" placeholder='Please enter your phone number' />
+          <span class='errorMessage' id='errorMessage'>You can't leave this empty</span>
+          <span id="clearButton" onClick='clearInput()'>x</span>
+        </div>
+
+        <div class="input__container">
+          <label>Email</label>
+          <input name='email' type='text' class='input__field' autocomplete='off' id="passwordTextInput" oninput='handlePasswordInput()' placeholder='Minimum 6 characters with a number and a letter' />
+          <span class='errorMessage' id='passwordErrorMessage'>You can't leave this empty</span>
+          <span id="clearButton" onClick='clearInput()'>x</span>
+        </div>
+
+
+        <div class="input__container">
+          <label>Password</label>
+          <input name='VerificationCode' type='password' class='input__field' autocomplete='off' id="passwordTextInput" oninput='handlePasswordInput()' placeholder='Minimum 6 characters with a number and a letter' />
+          <span class='errorMessage' id='passwordErrorMessage'>You can't leave this empty</span>
+          <span id="visibilityIcon" onClick='togglePasswordVisibility()' class="material-symbols-outlined">visibility_off</span>
+        </div>
+      </div>
+      <div class="right__container"></div>
+    </form>
+  </div>
+</section>
+
+<%- include('./layout/footer.ejs', { pageScripts: pageScripts }) %>

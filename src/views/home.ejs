@@ -1,18 +1,9 @@
-<%- include('./layout/header', { 
-    pageStyles: pageStyles , pageTitle: title 
-}) %>
+<%- include('./layout/header', { pageStyles: pageStyles , pageTitle: title }) %> <%- include('./components/navbar.ejs', { menuDetails: menuDetails }) %>
 
-<%- include('./components/navbar.ejs', { 
-    menuDetails: menuDetails
-}) %>
-    
-    <section>
-        <div class='carousel__banner'>
-            <span>working</span>
-        </div>
-    </section>
+<section>
+  <div class="carousel__banner">
+    <span>working</span>
+  </div>
+</section>
 
-
-<%- include('./layout/footer.ejs', { 
-    pageScripts: pageScripts 
-}) %>
+<%- include('./layout/footer.ejs', { pageScripts: pageScripts }) %>
